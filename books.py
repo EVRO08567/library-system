@@ -18,3 +18,9 @@ class BookManager:
     def list_books(self):
         for b in self.books:
             print(f"{b.title} by {b.author} (ISBN: {b.isbn}) - Available: {b.is_available}")
+
+    def check_availability(self, isbn):
+        for b in self.books:
+            if b.isbn == isbn:
+                return b.is_available
+        return False
