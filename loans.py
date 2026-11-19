@@ -18,3 +18,6 @@ class LoanManager:
     def return_book(self, loan):
         loan.book.is_available = True
         loan.is_returned = True
+
+    def get_active_loans(self):
+        return [loan for loan in self.loans if not loan.is_returned]
