@@ -15,3 +15,6 @@ class UserManager:
             if u.user_id == user_id:
                 return u
         return None
+
+    def remove_user(self, user_id):
+        self.users = [u for u in self.users if u.user_id != user_id]
